@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/vedantm8/concavity-optimization">
-    <img src="https://media.nagwa.com/873167374575/en/thumbnail_l.jpeg" alt="Logo" width="80" height="80">
+    <img src="https://media.nagwa.com/873167374575/en/thumbnail_l.jpeg" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Concavity-Optimization</h3>
