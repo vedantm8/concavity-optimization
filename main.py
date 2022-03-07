@@ -1,10 +1,11 @@
 import sympy as sym
+from sympy.parsing.sympy_parser import parse_expr
 
 # Creating the original equation 
 x, y = sym.symbols('x y')
 orig_func = input("f(x) = ")
 print("Original Function = ", orig_func)
-
+orig_func = orig_func.replace(" ", "")
 # Convert the function such that sympy will recognize it 
 for i in range(0, len(orig_func) - 1):
     if(orig_func[i+1] != '^' and orig_func[i+1] != '(' and orig_func[i+1] != ')' and orig_func[i+1] != '+' and orig_func[i+1] != '-' and orig_func[i+1] != '*' and orig_func[i+1] != '/' and orig_func[i].isdigit() and not orig_func[i+1].isdigit()):
@@ -37,10 +38,12 @@ for num in critical_values:
 print(f"Relative Minima / Convex = {relative_minima}")
 print(f"Relative Maxima / Concave = {relative_maxima}")
 
+
+func = parse_expr(orig_func, evaluate=False)
 for num in relative_minima: 
-    eval = orig_func.evalf(subs={x: num})
+    eval = func.evalf(subs={x: num})
     print(f"x is minimized, such that x[{num}] = {eval}")
 
 for num in relative_maxima:
-    eval = orig_func.evalf(subs={x: num})
+    eval = func.evalf(subs={x: num})
     print(f"x is maximized, such that x[{num}] = {eval}")
