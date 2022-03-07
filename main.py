@@ -2,8 +2,15 @@ import sympy as sym
 
 # Creating the original equation 
 x, y = sym.symbols('x y')
-orig_func = 4000*x - 33*x**2 - (2*x**3 - 3*x**2 + 400*x +5000) # input your own function here
+orig_func = input("f(x) = ")
 print("Original Function = ", orig_func)
+
+# Convert the function such that sympy will recognize it 
+for i in range(0, len(orig_func) - 1):
+    if(orig_func[i+1] != '^' and orig_func[i+1] != '(' and orig_func[i+1] != ')' and orig_func[i+1] != '+' and orig_func[i+1] != '-' and orig_func[i+1] != '*' and orig_func[i+1] != '/' and orig_func[i].isdigit() and not orig_func[i+1].isdigit()):
+        orig_func = orig_func[:i+1] + "*" + orig_func[i+1:]
+orig_func = orig_func.replace("^", "**")
+print("Converted Function =", orig_func)
 
 # First derivative to find critical values 
 dxdy = sym.diff(orig_func,x)
