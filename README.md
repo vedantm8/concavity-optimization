@@ -74,7 +74,6 @@ Distributed under the GNU General Public License Version 3.
 <!-- CONTACT -->
 ## Contact
 
-Vedant M - [Medium](https://medium.com/@vedantm8) - vedantm@duck.com
-<br/>
+Vedant M - [Medium](https://medium.com/@vedantm8) 
 Project Link: [Concavity Optimization](https://github.com/vedantm8/concavity-optimization)
 <p align="right">(<a href="#top">back to top</a>)</p>
